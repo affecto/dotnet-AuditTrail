@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuditTrail.Domain", "AuditTrail.Domain\AuditTrail.Domain.csproj", "{B18566B2-363C-4CD4-9DB2-77D03DBC7820}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuditTrail.Store", "AuditTrail.Store\AuditTrail.Store.csproj", "{D85990B3-3CCA-4F37-96BA-C18AFB522D19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuditTrail.Store.EntityFramework", "AuditTrail.Store.EntityFramework\AuditTrail.Store.EntityFramework.csproj", "{DF924802-FA81-47C1-9799-337A94D49C6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuditTrail.Querying", "AuditTrail.Querying\AuditTrail.Querying.csproj", "{E0A1EA95-23A2-4973-9610-AB9C521CBA09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuditTrail.Commanding", "AuditTrail.Commanding\AuditTrail.Commanding.csproj", "{BB719350-D910-4E85-9F48-0E09F5DEE4AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuditTrail.ApplicationServices", "AuditTrail.ApplicationServices\AuditTrail.ApplicationServices.csproj", "{7137D476-ABA9-4C99-BE63-0166AB7FAA91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuditTrail.Autofac", "AuditTrail.Autofac\AuditTrail.Autofac.csproj", "{57880A94-69D0-448A-A7D6-D94ED3317B5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuditTrail.WebApi", "AuditTrail.WebApi\AuditTrail.WebApi.csproj", "{389AAECE-6CA1-4BFE-9D99-CD3A23275E99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuditTrail.Interfaces", "AuditTrail.Interfaces\AuditTrail.Interfaces.csproj", "{C1233406-F1A1-4797-9BE7-850FB62B9674}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "root", "root", "{7AAF75BC-28DB-4721-BB7F-A8E807238337}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		appveyor.yml = appveyor.yml
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B18566B2-363C-4CD4-9DB2-77D03DBC7820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B18566B2-363C-4CD4-9DB2-77D03DBC7820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B18566B2-363C-4CD4-9DB2-77D03DBC7820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B18566B2-363C-4CD4-9DB2-77D03DBC7820}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D85990B3-3CCA-4F37-96BA-C18AFB522D19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D85990B3-3CCA-4F37-96BA-C18AFB522D19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D85990B3-3CCA-4F37-96BA-C18AFB522D19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D85990B3-3CCA-4F37-96BA-C18AFB522D19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF924802-FA81-47C1-9799-337A94D49C6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF924802-FA81-47C1-9799-337A94D49C6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF924802-FA81-47C1-9799-337A94D49C6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF924802-FA81-47C1-9799-337A94D49C6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0A1EA95-23A2-4973-9610-AB9C521CBA09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0A1EA95-23A2-4973-9610-AB9C521CBA09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0A1EA95-23A2-4973-9610-AB9C521CBA09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0A1EA95-23A2-4973-9610-AB9C521CBA09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB719350-D910-4E85-9F48-0E09F5DEE4AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB719350-D910-4E85-9F48-0E09F5DEE4AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB719350-D910-4E85-9F48-0E09F5DEE4AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB719350-D910-4E85-9F48-0E09F5DEE4AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7137D476-ABA9-4C99-BE63-0166AB7FAA91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7137D476-ABA9-4C99-BE63-0166AB7FAA91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7137D476-ABA9-4C99-BE63-0166AB7FAA91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7137D476-ABA9-4C99-BE63-0166AB7FAA91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57880A94-69D0-448A-A7D6-D94ED3317B5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57880A94-69D0-448A-A7D6-D94ED3317B5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57880A94-69D0-448A-A7D6-D94ED3317B5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57880A94-69D0-448A-A7D6-D94ED3317B5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{389AAECE-6CA1-4BFE-9D99-CD3A23275E99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{389AAECE-6CA1-4BFE-9D99-CD3A23275E99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{389AAECE-6CA1-4BFE-9D99-CD3A23275E99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{389AAECE-6CA1-4BFE-9D99-CD3A23275E99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1233406-F1A1-4797-9BE7-850FB62B9674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1233406-F1A1-4797-9BE7-850FB62B9674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1233406-F1A1-4797-9BE7-850FB62B9674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1233406-F1A1-4797-9BE7-850FB62B9674}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

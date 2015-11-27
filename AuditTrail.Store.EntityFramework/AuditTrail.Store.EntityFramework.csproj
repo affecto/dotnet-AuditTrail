@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DF924802-FA81-47C1-9799-337A94D49C6E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Affecto.AuditTrail.Store.EntityFramework</RootNamespace>
+    <AssemblyName>Affecto.AuditTrail.Store.EntityFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Affecto.Patterns.Domain, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Affecto.Patterns.Domain.2.0.1\lib\portable-net45+sl50+win+wpa81+wp80\Affecto.Patterns.Domain.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Affecto.Patterns.Domain.UnitOfWork, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Affecto.Patterns.Domain.UnitOfWork.2.0.0\lib\portable-net45+sl50+win+wpa81+wp80\Affecto.Patterns.Domain.UnitOfWork.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="PredicateExtensions">
+      <HintPath>..\packages\PredicateExtensions.1.0.0\lib\PredicateExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedFiles\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Migrations\201502191258233_Initial.cs" />
+    <Compile Include="Migrations\201502191258233_Initial.Designer.cs">
+      <DependentUpon>201502191258233_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502191301397_NullableUserId.cs" />
+    <Compile Include="Migrations\201502191301397_NullableUserId.Designer.cs">
+      <DependentUpon>201502191301397_NullableUserId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleRegistration.cs" />
+    <Compile Include="DbContext.cs" />
+    <Compile Include="DbRepository.cs" />
+    <Compile Include="DomainEventHandlers\AuditTrailEntryCreatedEventHandler.cs" />
+    <Compile Include="DomainRepositories\AuditTrailEntryDomainRepository.cs" />
+    <Compile Include="IDbContext.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\AuditTrailEntriesByFilterQuery.cs" />
+    <Compile Include="Queries\AuditTrailEntriesBySubjectQuery.cs" />
+    <Compile Include="Queries\AuditTrailEntriesQuery.cs" />
+    <Compile Include="Queries\AuditTrailEntryQuery.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AuditTrail.Domain\AuditTrail.Domain.csproj">
+      <Project>{b18566b2-363c-4cd4-9db2-77d03dbc7820}</Project>
+      <Name>AuditTrail.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AuditTrail.Store\AuditTrail.Store.csproj">
+      <Project>{d85990b3-3cca-4f37-96ba-c18afb522d19}</Project>
+      <Name>AuditTrail.Store</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201502191258233_Initial.resx">
+      <DependentUpon>201502191258233_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502191301397_NullableUserId.resx">
+      <DependentUpon>201502191301397_NullableUserId.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

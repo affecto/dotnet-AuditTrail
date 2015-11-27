@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{57880A94-69D0-448A-A7D6-D94ED3317B5E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Affecto.AuditTrail.Autofac</RootNamespace>
+    <AssemblyName>Affecto.AuditTrail.Autofac</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Affecto.Patterns.Cqrs, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Affecto.Patterns.Cqrs.2.0.0\lib\portable-net45+sl50+win+wpa81+wp80\Affecto.Patterns.Cqrs.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Affecto.Patterns.Cqrs.Autofac, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Affecto.Patterns.Cqrs.Autofac.2.0.0\lib\portable-net45+sl50+win+wpa81+wp80\Affecto.Patterns.Cqrs.Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Affecto.Patterns.Domain, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Affecto.Patterns.Domain.2.0.1\lib\portable-net45+sl50+win+wpa81+wp80\Affecto.Patterns.Domain.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Affecto.Patterns.Domain.Autofac, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Affecto.Patterns.Domain.Autofac.2.0.0\lib\portable-net45+sl50+win+wpa81+wp80\Affecto.Patterns.Domain.Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Affecto.Patterns.Domain.UnitOfWork, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Affecto.Patterns.Domain.UnitOfWork.2.0.0\lib\portable-net45+sl50+win+wpa81+wp80\Affecto.Patterns.Domain.UnitOfWork.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Affecto.Patterns.Domain.UnitOfWork.Autofac, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Affecto.Patterns.Domain.UnitOfWork.Autofac.2.0.0\lib\portable-net45+sl50+win+wpa81+wp80\Affecto.Patterns.Domain.UnitOfWork.Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedFiles\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="ModuleRegistration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="AuditTrail.Autofac.nuspec">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AuditTrail.ApplicationServices\AuditTrail.ApplicationServices.csproj">
+      <Project>{7137d476-aba9-4c99-be63-0166ab7faa91}</Project>
+      <Name>AuditTrail.ApplicationServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AuditTrail.Commanding\AuditTrail.Commanding.csproj">
+      <Project>{bb719350-d910-4e85-9f48-0e09f5dee4ab}</Project>
+      <Name>AuditTrail.Commanding</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AuditTrail.Interfaces\AuditTrail.Interfaces.csproj">
+      <Project>{C1233406-F1A1-4797-9BE7-850FB62B9674}</Project>
+      <Name>AuditTrail.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AuditTrail.Querying\AuditTrail.Querying.csproj">
+      <Project>{e0a1ea95-23a2-4973-9610-ab9c521cba09}</Project>
+      <Name>AuditTrail.Querying</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AuditTrail.Store.EntityFramework\AuditTrail.Store.EntityFramework.csproj">
+      <Project>{df924802-fa81-47c1-9799-337a94d49c6e}</Project>
+      <Name>AuditTrail.Store.EntityFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
