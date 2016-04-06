@@ -7,6 +7,6 @@
     <description>$description$</description>
     <projectUrl>https://github.com/affecto/dotnet-AuditTrail</projectUrl>
     <tags>affecto audit trail audittrail autofac</tags>
-    <releaseNotes>Moved to GitHub.</releaseNotes>
+    <releaseNotes>Different implementation for Automapper interface mapping configuration.</releaseNotes>
   </metadata>
 </package>
