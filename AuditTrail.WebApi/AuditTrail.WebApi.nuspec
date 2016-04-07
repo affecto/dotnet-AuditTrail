@@ -7,6 +7,6 @@
     <description>$description$</description>
     <projectUrl>https://github.com/affecto/dotnet-AuditTrail</projectUrl>
     <tags>affecto audit trail audittrail web api webapi rest</tags>
-    <releaseNotes>Moved to GitHub.</releaseNotes>
+    <releaseNotes>AuditTrail.Autofac nuget update.</releaseNotes>
   </metadata>
 </package>

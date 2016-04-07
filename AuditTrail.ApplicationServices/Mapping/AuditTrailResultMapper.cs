@@ -11,7 +11,7 @@ namespace Affecto.AuditTrail.ApplicationServices.Mapping
         {
             Mapper.CreateMap<Querying.Data.AuditTrailEntry, AuditTrailEntry>();
             Mapper.CreateMap<Querying.Data.AuditTrailEntry, IAuditTrailEntry>()
-                .As<AuditTrailEntry>();
+                .ConstructUsing(Mapper.Map<Querying.Data.AuditTrailEntry, AuditTrailEntry>);
             Mapper.CreateMap<Querying.Data.AuditTrailResult, AuditTrailResult>();
         }
     }
