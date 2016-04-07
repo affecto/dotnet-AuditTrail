@@ -13,6 +13,6 @@
 
 | Target | Build |
 | -----------------------|------------------|
-| Project | [![Build status](https://ci.appveyor.com/api/projects/status/09loo7rk560xfhqv?svg=true)](https://ci.appveyor.com/project/johannesvaltonen/dotnet-audittrail) |
-| Master branch | [![Build status](https://ci.appveyor.com/api/projects/status/09loo7rk560xfhqv/branch/master?svg=true)](https://ci.appveyor.com/project/johannesvaltonen/dotnet-audittrail/branch/master) |
-| Dev branch | [![Build status](https://ci.appveyor.com/api/projects/status/09loo7rk560xfhqv/branch/dev?svg=true)](https://ci.appveyor.com/project/johannesvaltonen/dotnet-audittrail/branch/dev) |
+| Project | [![Build status](https://ci.appveyor.com/api/projects/status/09loo7rk560xfhqv?svg=true)](https://ci.appveyor.com/project/affecto/dotnet-audittrail) |
+| Master branch | [![Build status](https://ci.appveyor.com/api/projects/status/09loo7rk560xfhqv/branch/master?svg=true)](https://ci.appveyor.com/project/affecto/dotnet-audittrail/branch/master) |
+| Dev branch | [![Build status](https://ci.appveyor.com/api/projects/status/09loo7rk560xfhqv/branch/dev?svg=true)](https://ci.appveyor.com/project/affecto/dotnet-audittrail/branch/dev) |
