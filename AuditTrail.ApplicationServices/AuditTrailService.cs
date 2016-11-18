@@ -5,6 +5,7 @@ using Affecto.AuditTrail.Commanding.Commands;
 using Affecto.AuditTrail.Interfaces;
 using Affecto.AuditTrail.Interfaces.Model;
 using Affecto.AuditTrail.Querying;
+using Affecto.Authentication.Claims;
 using Affecto.Mapping;
 using Affecto.Patterns.Cqrs;
 
@@ -14,9 +15,10 @@ namespace Affecto.AuditTrail.ApplicationServices
     {
         private readonly IAuditTrailQueryService queryService;
         private readonly ICommandBus commandBus;
+        private readonly IAuthenticatedUserContext userContext;
         private readonly MapperFactory mapperFactory;
 
-        public AuditTrailService(IAuditTrailQueryService queryService, ICommandBus commandBus)
+        public AuditTrailService(IAuditTrailQueryService queryService, ICommandBus commandBus, IAuthenticatedUserContext userContext)
         {
             if (queryService == null)
             {
@@ -26,20 +28,27 @@ namespace Affecto.AuditTrail.ApplicationServices
             {
                 throw new ArgumentNullException("commandBus");
             }
+            if (userContext == null)
+            {
+                throw new ArgumentNullException(nameof(userContext));
+            }
 
             this.queryService = queryService;
             this.commandBus = commandBus;
+            this.userContext = userContext;
             mapperFactory = new MapperFactory();
         }
 
         public IEnumerable<IAuditTrailEntry> GetEntries()
         {
+            CheckPermission(Permissions.ViewAudittrail);
             var mapper = mapperFactory.CreateAuditTrailEntryMapper();
             return mapper.Map(queryService.GetEntries());
         }
 
         public IAuditTrailResult GetEntries(IAuditTrailFilter filter)
         {
+            CheckPermission(Permissions.ViewAudittrail);
             var queryFilter = mapperFactory.CreateAuditTrailFilterMapper().Map(filter);
 
             var mapper = mapperFactory.CreateAuditTrailResultMapper();
@@ -74,6 +83,11 @@ namespace Affecto.AuditTrail.ApplicationServices
             commandBus.Send(Envelope.Create(command));
             var mapper = mapperFactory.CreateAuditTrailEntryMapper();
             return mapper.Map(queryService.GetEntry(id));
+        }
+
+        private void CheckPermission(string permission)
+        {
+            userContext.CheckPermission(permission);
         }
     }
 }

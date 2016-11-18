@@ -21,7 +21,7 @@ namespace Affecto.AuditTrail.WebApi
 
         private static void RegisterControllerFilters<TController>(ContainerBuilder builder) where TController : IHttpController
         {
-            builder.RegisterType<RequestExceptionFilter>()
+            builder.RegisterType<WebApiRequestExceptionFilter>()
                 .AsWebApiExceptionFilterFor<TController>()
                 .InstancePerRequest();
 

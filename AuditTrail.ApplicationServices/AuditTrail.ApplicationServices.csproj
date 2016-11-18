@@ -35,6 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Affecto.Authentication.Claims, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Affecto.Authentication.Claims.2.5.0\lib\net45\Affecto.Authentication.Claims.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Affecto.Mapping, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Affecto.Mapping.1.0.0\lib\net40\Affecto.Mapping.dll</HintPath>
       <Private>True</Private>
@@ -69,6 +73,7 @@
     <Compile Include="Model\AuditTrailDateFilterParameter.cs" />
     <Compile Include="Model\AuditTrailEntry.cs" />
     <Compile Include="Model\AuditTrailFilter.cs" />
+    <Compile Include="Permissions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
